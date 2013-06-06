@@ -132,9 +132,7 @@ class GroupMeBot extends Adapter
       response.on 'end', ->
         console.log "[GROUPME RESPONSE] ", data
     request.end(json)
-    request.on('error', function(e) {
-    	console.error(e);
-    	});
+    request.on 'error', e -> console.log(e)
 
   # Private: fetch messages from the GroupMe room
   # Calls your callback with the latest 20 messages on completion.
