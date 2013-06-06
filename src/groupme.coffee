@@ -111,7 +111,7 @@ class GroupMeBot extends Adapter
 
     options =
       agent: false
-      host: 'v2.groupme.com'
+      host: 'api.groupme.com/v3'
       port: 443
       method: 'POST'
       path: "/groups/#{room_id}/messages"
@@ -143,7 +143,7 @@ class GroupMeBot extends Adapter
   fetch_messages: (room_id, cb) =>
     options =
       agent: false
-      host: 'v2.groupme.com'
+      host: 'api.groupme.com/v3'
       port: 443
       method: 'GET'
       path: "/groups/#{room_id}/messages"
