@@ -111,10 +111,10 @@ class GroupMeBot extends Adapter
 
     options =
       agent: false
-      host: 'api.groupme.com/v3'
+      host: 'api.groupme.com'
       port: 443
       method: 'POST'
-      path: "/groups/#{room_id}/messages"
+      path: "/v3/groups/#{room_id}/messages"
       headers:
         'Content-Length': json.length
         'Content-Type': 'application/json'
@@ -143,10 +143,10 @@ class GroupMeBot extends Adapter
   fetch_messages: (room_id, cb) =>
     options =
       agent: false
-      host: 'api.groupme.com/v3'
+      host: 'api.groupme.com'
       port: 443
       method: 'GET'
-      path: "/groups/#{room_id}/messages"
+      path: "/v3/groups/#{room_id}/messages"
       headers:
         'Accept': 'application/json, text/javascript',
         'Accept-Charset': 'ISO-8859-1,utf-8',
