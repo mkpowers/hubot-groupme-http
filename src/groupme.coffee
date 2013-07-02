@@ -114,7 +114,7 @@ class GroupMeBot extends Adapter
       host: 'api.groupme.com'
       port: 443
       method: 'POST'
-      path: "/v3/groups/#{room_id}/messages"
+      path: "/v3/groups/4657173/messages"
       headers:
         'Content-Type': 'application/json'
         'X-Access-Token': @token
