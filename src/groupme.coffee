@@ -119,6 +119,7 @@ class GroupMeBot extends Adapter
         'Content-Type': 'application/json'
         'X-Access-Token': @token
 
+	console.log options
     request = HTTPS.request options, (response) ->
       data = ''
       response.on 'data', (chunk)-> data += chunk
