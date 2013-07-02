@@ -107,7 +107,7 @@ class GroupMeBot extends Adapter
         source_guid: @generate_guid()
 
     json = JSON.stringify(messageStruct)
-    console.log "[SENDING GROUPME] ", json
+    console.log "[SENDING GROUPME] ", json, room_id
 
     options =
       agent: false
@@ -119,7 +119,6 @@ class GroupMeBot extends Adapter
         'Content-Type': 'application/json'
         'X-Access-Token': @token
 
-	console.log options
     request = HTTPS.request options, (response) ->
       data = ''
       response.on 'data', (chunk)-> data += chunk
