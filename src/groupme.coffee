@@ -116,14 +116,7 @@ class GroupMeBot extends Adapter
       method: 'POST'
       path: "/v3/groups/#{room_id}/messages"
       headers:
-        'Content-Length': json.length
         'Content-Type': 'application/json'
-        'Accept': 'application/json, text/javascript',
-        'Accept-Charset': 'ISO-8859-1,utf-8',
-        'Accept-Language': 'en-US',
-        'Origin': 'https://web.groupme.com',
-        'Referer': "https://web.groupme.com/groups/#{room_id}",
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.45 Safari/537.22',
         'X-Access-Token': @token
 
     request = HTTPS.request options, (response) ->
@@ -132,7 +125,6 @@ class GroupMeBot extends Adapter
       response.on 'end', ->
         console.log "[GROUPME RESPONSE] ", data
     request.end(json)
-    request.on 'error', e -> console.log(e)
 
   # Private: fetch messages from the GroupMe room
   # Calls your callback with the latest 20 messages on completion.
