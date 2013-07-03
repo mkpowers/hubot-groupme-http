@@ -19,7 +19,7 @@ class GroupMeBot extends Adapter
       #    @send_message picture_url: url
       #else
       #  @send_message text:str
-      if str.length > 450
+      if str.length > 450 and user?.name not "Robert Ramirez"
         substrings = str.match /.{1,430}/g
         for text, index in substrings
           @send_message user.room_id, "(#{index}/#{substrings.length}) #{text}"
