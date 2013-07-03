@@ -84,6 +84,8 @@ class GroupMeBot extends Adapter
               userInfo =
                 name: msg.name
                 room_id: room
+              
+              console.log "#{userInfo.name}"              
               @receive new TextMessage userInfo, msg.text
     , 2000
 
