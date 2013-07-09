@@ -79,13 +79,11 @@ class GroupMeBot extends Adapter
             @newest_timestamp[room] = msg.created_at
 
             # note that the name assigned to your robot in GroupMe must exactly match the name passed to Hubot
-            if msg.text and (msg.created_at * 1000) > new Date().getTime() - 6*1000 and msg.name != @robot.name
+            if msg.text and (msg.created_at * 1000) > new Date().getTime() - 6*1000 and msg.name != @robot.name and msg.name != 'Robert Ramirez'
               console.log "[RECEIVED in #{room}] #{msg.name}: #{msg.text}"
               userInfo =
                 name: msg.name
-                room_id: room
-              
-              console.log "#{userInfo.name}"              
+                room_id: room             
               @receive new TextMessage userInfo, msg.text
     , 2000
 
