@@ -86,7 +86,7 @@ class GroupMeBot extends Adapter
               userInfo =
                 name: msg.name
                 room_id: room 
-                user_id: msg.user_id            
+                user_id: msg.user_id      
               @receive new TextMessage userInfo, msg.text
     , 2000
 
