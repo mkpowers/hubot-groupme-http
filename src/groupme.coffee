@@ -23,9 +23,9 @@ class GroupMeBot extends Adapter
       if str.length > 450 and user?.name not "Robert Ramirez"
         substrings = str.match /.{1,430}/g
         for text, index in substrings
-          @send_message user.room_id, "(#{index}/#{substrings.length}) #{text}"
+          @send_message user.user_id, "(#{index}/#{substrings.length}) #{text}"
       else
-        @send_message user.room_id, str
+        @send_message user.user_id, str
 
   # Public: Raw method for building a reply and sending it back to the chat
   # source. Extend this.
@@ -85,8 +85,7 @@ class GroupMeBot extends Adapter
               console.log "[RECEIVED in #{room}] #{msg.name}: #{msg.text}"
               userInfo =
                 name: msg.name
-                room_id: room 
-                user_id: msg.user_id      
+                user_id: msg.user_id 
               @receive new TextMessage userInfo, msg.text
     , 2000
 
