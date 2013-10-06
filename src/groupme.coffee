@@ -19,7 +19,7 @@ class GroupMeBot extends Adapter
       #    @send_message picture_url: url
       #else
       #  @send_message text:str
-      console.log "#{user.name}"
+      console.log "#{user}"
       if str.length > 450 and user?.name not "Robert Ramirez"
         substrings = str.match /.{1,430}/g
         for text, index in substrings
@@ -108,7 +108,7 @@ class GroupMeBot extends Adapter
         source_guid: @generate_guid()
 
     json = JSON.stringify(messageStruct)
-    console.log "[SENDING GROUPME] ", json, room_id
+    console.log "[SENDING GROUPME] ", json
 
     options =
       agent: false
