@@ -83,9 +83,9 @@ class GroupMeBot extends Adapter
             # note that the name assigned to your robot in GroupMe must exactly match the name passed to Hubot
             if msg.text and (msg.created_at * 1000) > new Date().getTime() - 6*1000 and msg.name != @robot.name and msg.name != 'Robert Ramirez'
               console.log "[RECEIVED in #{room}] #{msg.name}: #{msg.text}"
-              userInfo =
-                name: msg.name
-                user_id: msg.user_id 
+              userInfo = {}
+              userInfo.name = msg.name
+              userInfo.user_id = msg.user_id
               @receive new TextMessage userInfo, msg.text
     , 2000
 
